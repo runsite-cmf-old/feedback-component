@@ -27,7 +27,7 @@ class FeedbackController extends RunsiteCMFBaseController
         $data = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email',
-            'message' => 'required|string|max:510',
+            'message' => 'required|string|max:512',
         ]);
 
         return redirect()->back();
