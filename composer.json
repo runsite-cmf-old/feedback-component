@@ -18,7 +18,7 @@
     },
     "extra": {
         "providers": [
-            "Runsite\\CMF\\Component\\Feedback\\Feedback-componentServiceProvider"
+            "Runsite\\CMF\\Component\\Feedback\\FeedbackComponentServiceProvider"
         ]
     },
     "minimum-stability": "dev"

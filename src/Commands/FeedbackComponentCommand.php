@@ -1,24 +1,24 @@
 <?php
 
-namespace Runsite\CMF\Component\Feedback\Commands;
+namespace Runsite\Component\Feedback\Commands;
 
 use Illuminate\Console\Command;
 
-class Feedback-componentCommand extends Command
+class FeedbackComponentCommand extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'feedback-component:info';
+    protected $signature = 'feedback-component:setup';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Shows the feedback-component package information';
+    protected $description = 'Setup feedback-component';
 
     /**
      * Create a new command instance.
