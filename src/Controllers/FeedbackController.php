@@ -3,26 +3,27 @@
 namespace Runsite\Component\Feedback\Controllers;
 
 use Runsite\CMF\Http\Controllers\RunsiteCMFBaseController;
-use Illuminate\Http\Request;
+use Runsite\Component\Feedback\Interfaces\Feedback;
+use Illuminate\{
+    Http\Request,
+    View\View,
+    Http\Response
+};
 
-class FeedbackController extends RunsiteCMFBaseController
+class FeedbackController extends RunsiteCMFBaseController implements Feedback
 {
     /**
      * Display the specified resource.
-     *
-     * @return \Illuminate\View\View
      */
-    public function show()
+    public function show(): View
     {
         return $this->view('feedback.show');
     }
 
     /**
      * Sending message.
-     *
-     * @return \Illuminate\Http\Response
      */
-    public function send(Request $request)
+    public function send(Request $request): Response
     {
         $data = $request->validate([
             'name' => 'required|string|max:255',
