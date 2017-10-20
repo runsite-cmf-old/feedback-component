@@ -3,7 +3,7 @@
 namespace Runsite\Component\Feedback;
 
 use Illuminate\Support\ServiceProvider;
-use Runsite\Component\Feedback\Commands\FeedbackComponentCommand;
+use Runsite\Component\Feedback\Commands\Setup\FeedbackComponentSetupCommand;
 
 class FeedbackComponentServiceProvider extends ServiceProvider
 {
@@ -16,9 +16,16 @@ class FeedbackComponentServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->commands([
-                FeedbackComponentCommand::class,
+                FeedbackComponentSetupCommand::class,
             ]);
         }
+
+        $this->publishes([
+            __DIR__.'/Publish/FeedbackController.php' => app_path('Http/Controllers/FeedbackController.php'),
+            __DIR__.'/Publish/SendFeedback.php' => app_path('Mail/SendFeedback.php'),
+            __DIR__.'/Publish/mail.blade.php' => resource_path('views/feedback/mail.blade.php'),
+            __DIR__.'/Publish/show.blade.php' => resource_path('views/feedback/show.blade.php'),
+        ]);
     }
 
     /**
