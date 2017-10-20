@@ -1,0 +1,25 @@
+{
+    "name": "runsite-cmf/feedback-component",
+    "description": "Runsite CMF Component",
+    "license": "MIT",
+    "type": "library",
+    "require": {
+        "php": ">=7.0",
+        "illuminate/support": "5.*"
+    },
+    "author": {
+        "name": "Jaroslaw Goszowski",
+        "email": "aroslaw Goszowski"
+    },
+    "autoload": {
+        "psr-4": {
+            "Runsite\\CMF\\Component\\Feedback\\": "src/"
+        }
+    },
+    "extra": {
+        "providers": [
+            "Runsite\\CMF\\Component\\Feedback\\Feedback-componentServiceProvider"
+        ]
+    },
+    "minimum-stability": "dev"
+}
